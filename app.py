@@ -6,18 +6,16 @@ import os
 
 app = Flask(__name__)
 
-# --- KONFFI: päivitä tarpeen mukaan ---
 DB_CONFIG = {
     "host": "localhost",
     "user": "raccoon",
     "password": "raccoonmaster",
     "database": "lemppadb",
 }
-MAX_COMMITS = 5  # montako viimeistä committia näytetään
+MAX_COMMITS = 5 
 
 
 def get_mysql_time():
-    """Palauttaa MySQL-palvelimen kellonajan merkkijonona."""
     conn = mysql.connector.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("SELECT NOW();")
@@ -64,7 +62,7 @@ def get_git_commits():
                 )
         return commits
     except Exception:
-        # Ei git-repoa tai komento ei onnistu -> ei rikota sivua
+        
         return []
 
 
