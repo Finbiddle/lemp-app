@@ -156,7 +156,7 @@ def home():
 
         <hr style="width:60%; margin:30px auto;">
 
-        <h2>Git-commithistoria</h2>
+        <h2>Git commit -historia</h2>
         <table>
           <tr>
             <th>Hash</th>
@@ -169,7 +169,7 @@ def home():
         <footer>
           Palvelin: LEMPPARI-RaccoonServer 🦝
           <br>
-          <span>Git käytössä: commitit luetaan suoraan palvelimen git-reposta.</span>
+          <span>Git käytössä: commitit luetaan palvelimen git-reposta.</span>
         </footer>
       </body>
     </html>
