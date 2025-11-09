@@ -189,7 +189,6 @@ def time():
 
 @app.route("/health")
 def health():
-    """Yksinkertainen health-check, hyödyllinen debugissa."""
     try:
         _ = get_mysql_time()
         return jsonify({"status": "ok"}), 200
@@ -198,6 +197,5 @@ def health():
 
 
 if __name__ == "__main__":
-    # Kehityskäyttöön; tuotannossa ajat tämän Gunicornilla.
     app.run(host="0.0.0.0", port=5000, debug=True)
 
