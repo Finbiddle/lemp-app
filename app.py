@@ -12,8 +12,12 @@ DB_CONFIG = {
     "password": "raccoonmaster",
     "database": "lemppadb",
 }
+<<<<<<< HEAD
 MAX_COMMITS = 5 
 
+=======
+MAX_COMMITS = 5
+>>>>>>> 3a9c130 (iltacommitti)
 
 def get_mysql_time():
     conn = mysql.connector.connect(**DB_CONFIG)
@@ -26,11 +30,6 @@ def get_mysql_time():
 
 
 def get_git_commits():
-    """
-    Hakee viimeisimmät commitit nykyisestä git-reposta.
-    Palauttaa listan dict: {hash, msg, date}.
-    Jos git ei ole käytettävissä, palauttaa tyhjän listan.
-    """
     try:
         repo_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -62,7 +61,11 @@ def get_git_commits():
                 )
         return commits
     except Exception:
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 3a9c130 (iltacommitti)
         return []
 
 
@@ -173,7 +176,7 @@ def home():
         </table>
 
         <footer>
-          Palvelin: lemp-app · Made by Tomi Koskinen 🦝
+          Palvelin: LEMPPARI-RaccoonServer 🦝
           <br>
           <span>Git käytössä: commitit luetaan suoraan palvelimen git-reposta.</span>
         </footer>
@@ -189,6 +192,10 @@ def time():
 
 @app.route("/health")
 def health():
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a9c130 (iltacommitti)
     try:
         _ = get_mysql_time()
         return jsonify({"status": "ok"}), 200
@@ -197,5 +204,9 @@ def health():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a9c130 (iltacommitti)
     app.run(host="0.0.0.0", port=5000, debug=True)
 
